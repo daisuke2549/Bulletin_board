@@ -1,17 +1,30 @@
 <div class ="post_list">
+<<<<<<< HEAD
 <div class="post_list_title">投稿一覧</div>
 <% @posts.each do |post|%>
   <div class ="post_list_card">
     <div class="card_title">
       <%= post.name %>
+=======
+  <div class ="post_list_card">
+    <div class="card_title">
+      <%= @post.name %>
+>>>>>>> master
     </div>
     <div class="card_title_info">
       <p>投稿日</p>
       <p>投稿時間</p>
     </div>
     <div class="card_title_info">
+<<<<<<< HEAD
        <%= post.content %>
     </div>
   </div>
   <% end %>
 </div>
+=======
+       <%= @post.content %>
+    </div>
+  </div>
+</div>
+>>>>>>> master
