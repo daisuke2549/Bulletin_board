@@ -13,8 +13,6 @@ class PostsController < ApplicationController
     def post_params
       params.require(:content).permit(:name)
     end
-<<<<<<< HEAD
 end
-=======
-end
->>>>>>> master
+
+
