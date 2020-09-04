@@ -30,12 +30,9 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'haml-rails'
 gem 'better_errors'
 gem 'binding_of_caller'
-<<<<<<< HEAD
 gem 'pry-rails'
 
-=======
 gem 'devise'
->>>>>>> a148845452bb42dc77d25eb8347933aed72874aa
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
