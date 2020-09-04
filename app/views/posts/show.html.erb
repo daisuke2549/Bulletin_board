@@ -1,14 +1,3 @@
-<div class ="container">
-<p>掲示板</p>
-
-<form method="POST" action="<?php print($_SERVER['PHP_SELF']) ?>">
-<input type="text" name="personal_name"><br><br>
-<textarea name="contents" rows="8" cols="40">
-</textarea><br><br>
-<input type="submit" name="btn1" value="投稿する">
-</form>
-</div>
-
 <div class ="post_list">
 <div class="post_list_title">投稿一覧</div>
 <% @posts.each do |post|%>
@@ -26,4 +15,3 @@
   </div>
   <% end %>
 </div>
-
