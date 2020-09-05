@@ -16,8 +16,10 @@
     .post_list_card
       .card_title
         = post.name
-      .card_title_info
-        %p 投稿日
-        %p 投稿時間
+        %p1 投稿日
+        %p2 投稿時間
       .card_title_info
         = post.content
+      .image_post_icon
+      .post_edit_.button
+        = link_to '編集', edit_post_path(post.id)
