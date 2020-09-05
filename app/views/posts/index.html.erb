@@ -1,7 +1,9 @@
 <div class ="container">
 <p>掲示板</p>
 <form method="POST" action="<?php print($_SERVER['PHP_SELF']) ?>">
-<input type="text" name="personal_name"><br><br>
+<div class="name">名前</div>
+<input type="text" name="personal_name"><br>
+<div class="content">内容</div>
 <textarea name="contents" rows="8" cols="40">
 </textarea><br><br>
 <input type="submit" name="btn1" value="投稿する">
