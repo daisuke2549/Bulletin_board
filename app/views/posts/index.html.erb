@@ -1,6 +1,5 @@
 <div class ="container">
 <p>掲示板</p>
-
 <form method="POST" action="<?php print($_SERVER['PHP_SELF']) ?>">
 <input type="text" name="personal_name"><br><br>
 <textarea name="contents" rows="8" cols="40">
@@ -10,7 +9,7 @@
 </div>
 
 <div class ="post_list">
-  <div class="post_list_title">投稿一覧</div>
+<div class="post_list_title">投稿一覧</div>
   <% @posts.each do |post|%>
     <div class ="post_list_card">
       <div class="card_title">
@@ -26,7 +25,4 @@
       <div class="post_edit_ button "><%= link_to '編集', edit_post_path(post.id) %>
       </div>
     </div>
-      <% end %>
-  </div>
-</div>
-
+    <% end %>
