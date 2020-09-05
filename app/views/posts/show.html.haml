@@ -1,0 +1,14 @@
+.post_list
+  .post_list_title 投稿一覧
+  - @posts.each do |post|
+    .post_list_card
+      .card_title
+        = post.name
+      .post_list_card
+        .card_title
+          = @post.name
+        .card_title_info
+          %p 投稿日
+          %p 投稿時間
+        .card_title_info
+          = post.content
