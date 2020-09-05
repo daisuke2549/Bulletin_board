@@ -1,5 +1,5 @@
 <div class="container">
-  <%= form_with(model: @post, url: posts_path(@post), local: true) do |f| %>
+  <%= form_with(model: @post, url: post_path(@post),method: 'patch', local: true) do |f| %>
     <div>
       <%= f.label :name, '名前' , class: 'text-edit-posts-name'%>
     </div>

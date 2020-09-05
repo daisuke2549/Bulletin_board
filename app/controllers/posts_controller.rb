@@ -17,18 +17,17 @@ class PostsController < ApplicationController
     end
 
     def create
-        @post = Post.new(article_params)
-        if @post.save
-          redirect_to posts_path(@post), notice: '保存できたよ'
-        else
-          flash.now[:error] = '保存に失敗しました'
-          render :new
+        @post = Post.new(post_params)
+        if @post.save!
+            redirect_to posts_path(@post), notice: '保存できました'
+          else
+            flash.now[:error] = '保存に失敗しました'
+            render :new
         end
     end
 
     def update
       @post = Post.find(params[:id])
-      @post.update(post_params)
         if @post.update(post_params)
           redirect_to post_path(@post), notice: '更新できました'
         else
@@ -40,8 +39,10 @@ class PostsController < ApplicationController
 
     private
     def post_params
-      params.permit(:name,:content)
+      params.require(:post).permit(:name, :content)
+    end
+    def set_post
+        @post = Post.find(params[:id])
     end
 end
-
 
