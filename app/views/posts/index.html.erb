@@ -28,6 +28,13 @@
         </div>
         <div class="post_delete_button "><%= link_to "削除", "posts/#{post.id}", data: { method: 'delete', confirm: '本当に削除してもよろしいですか？' } %>
       </div>
+      <div class="post_newimage_button "><%= link_to '画像投稿', edit_post_path(post.id) %>
+      </div>
+      <% post.images.each do |image| %>
+        <% if @post.image.attached? %>
+          <%= image_tag @post.image %>
+        <% end %>
+      <% end %>
     </div>
     <% end %>
   </div>

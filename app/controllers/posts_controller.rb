@@ -28,12 +28,13 @@ class PostsController < ApplicationController
 
     def update
       @post = Post.find(params[:id])
-        if @post.update(post_params)
-          redirect_to post_path(@post), notice: '更新できました'
-        else
-          flash.now[:error] = '更新できませんでした'
-          render :edit
-        end
+      @post.update params.require(:post).permit(:name, :content, images: [])
+      if @post.update(post_params)
+        redirect_to post_path(@post), notice: '更新できました'
+      else
+        flash.now[:error] = '更新できませんでした'
+        render :edit
+      end
     end
     
     def destroy
@@ -45,7 +46,7 @@ class PostsController < ApplicationController
 
     private
     def post_params
-      params.require(:post).permit(:name, :content)
+        params.require(:post).permit(:name, :content, :images)
     end
     def set_post
         @post = Post.find(params[:id])
