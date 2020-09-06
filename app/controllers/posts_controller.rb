@@ -17,6 +17,7 @@ class PostsController < ApplicationController
     end
 
     def create
+        @post = Comment.create params.require(:post).permit(:content, :images)
         @post = Post.new(post_params)
         if @post.save!
             redirect_to posts_path(@post), notice: '保存できました'
