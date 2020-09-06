@@ -1,14 +1,3 @@
-<div class ="container">
-<p>掲示板</p>
-<form method="POST" action="<?php print($_SERVER['PHP_SELF']) ?>">
-<div class="name">名前</div>
-<input type="text" name="personal_name"><br>
-<div class="content">内容</div>
-<textarea name="contents" rows="8" cols="40">
-</textarea><br><br>
-<input type="submit" name="btn1" value="投稿する">
-</form>
-</div>
 
 <div class ="post_list">
 <div class="post_list_title">投稿一覧</div>
@@ -30,11 +19,6 @@
       </div>
       <div class="post_newimage_button "><%= link_to '画像投稿', edit_post_path(post.id) %>
       </div>
-      <% post.images.each do |image| %>
-        <% if @post.image.attached? %>
-          <%= image_tag @post.image %>
-        <% end %>
-      <% end %>
     </div>
     <% end %>
   </div>
