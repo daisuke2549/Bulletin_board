@@ -31,9 +31,17 @@
 
 .post_list_card{
 border: 2px solid;
-height:120px;
+height:140px;
 width:500px;
 }
 
 .post_edit_ button a{
+}
+
+
+.post_new_image_view img{
+    width:70px;
+    position: relative;
+    padding-left:400px;
+    top:-90px;
 }
