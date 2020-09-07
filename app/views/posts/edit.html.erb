@@ -16,6 +16,7 @@
   <% end %>
   <%= form_with model: @post, local: true  do |form| %>
     <%= form.file_field :images, multiple: true %><br>
+    <%= form.file_field :image %><br>
     <%= form.submit '画像投稿' %><br>
 <% end %>
 </div>
