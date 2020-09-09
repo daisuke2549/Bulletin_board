@@ -5,3 +5,5 @@
       = @post.name
     .card_title_info2
       = @post.content
+    .post_delete_button
+      = link_to '削除', posts_path(@post), method: :delete

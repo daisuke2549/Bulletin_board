@@ -9,7 +9,7 @@
 
 
 .post_list_card{
-    margin-top:30px;
+    margin-top:60px;
 }
 
 
@@ -44,4 +44,14 @@ width:500px;
     position: relative;
     padding-left:400px;
     top:-90px;
+}
+
+.post_new{
+    text-decoration: none;
+    margin-left:375px;
+    top:100px;
+}
+.button_to input{
+    background-color: blue;
+    color:white;
 }

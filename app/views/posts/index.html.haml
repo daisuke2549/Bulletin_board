@@ -1,5 +1,7 @@
 .post_list
   .post_list_title 投稿一覧
+  .post_new
+    = button_to '新規投稿はこちら', new_post_path, method: :get
   - @posts.each do |post|
     .post_list_card
       .card_title
@@ -15,3 +17,6 @@
         = link_to "削除", "posts/#{post.id}", data: { method: 'delete', confirm: '本当に削除してもよろしいですか？' }
       .post_newimage_button
         = link_to '画像投稿', edit_post_path(post.id)
+      .post_new_image_view
+        = image_tag(post.image) if post.image.attached?
+        
