@@ -40,3 +40,8 @@ document.addEventListener('turbolinks:load', () => {
 }, 5000);
 })
 
+document.addEventListener('turbolinks:load', () => {
+  setTimeout(function() {
+    $('.flash.time-limit p').fadeOut();
+}, 5000);
+})
