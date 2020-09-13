@@ -1,9 +1,7 @@
 .post_list
-  .post_list_title 投稿一覧
+  .post_list_title 投稿詳細
   .post_list_card
     .card_title
       = @post.name
     .card_title_info2
       = @post.content
-    .post_delete_button
-      = link_to '削除', posts_path(@post), method: :delete
