@@ -5,6 +5,7 @@ class Account < ApplicationRecord
          :recoverable, :rememberable, :validatable 
   has_many :articles, dependent: :destroy
   has_many :likes, dependent: :destroy
+  has_one :profile, dependent: :destroy
 
 
   def has_written?(post)
