@@ -18,5 +18,9 @@
           = link_to "削除", "posts/#{post.id}", data: { method: 'delete', confirm: '本当に削除してもよろしいですか？' }
         .post_newimage_button
           = link_to '画像投稿', edit_post_path(post.id)
+        - if account_signed_in?
+          .post_like_heart
+            = link_to post_like_path(post), data: { method: 'post' } do
+              = image_tag 'Vector.png'
         .post_new_image_view
           = image_tag(post.image) if post.image.attached?
