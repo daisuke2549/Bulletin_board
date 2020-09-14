@@ -6,7 +6,7 @@ class CreateProfiles < ActiveRecord::Migration[6.0]
       t.text :introduction
       t.integer :gender
       t.date :birthday
-      t.booleamn :subscribed, default: false
+      t.boolean :subscribed, default: false
       t.timestamps
     end
   end

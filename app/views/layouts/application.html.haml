@@ -8,6 +8,15 @@
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
   %body
+  .dropdown
+  - if account_signed_in?
+    .dropdown
+      = image_tag 'default-avatar.png', class: 'header_avatar dropbtn'
+      .dropdown-content
+        = link_to 'プロフィール', profile_path
+        = link_to 'ログアウト', destroy_account_session_path, data: { method: 'delete' }
+  - else
+    = link_to 'ログイン', new_account_session_path, class: 'header_loginBtn'
   .flash.time-limit
     %p
       = flash[:notice]
