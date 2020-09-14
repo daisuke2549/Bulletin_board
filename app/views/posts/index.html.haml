@@ -3,29 +3,4 @@
   .post_new
     = button_to '新規投稿はこちら', new_post_path, method: :get
   - @posts.each do |post|
-    .post_list_card
-      = link_to post_path(post) do
-        .card_title
-          = post.name
-          %p1 投稿日
-          %p2 投稿時間
-        .card_title_info
-          = post.content
-        .image_post_icon
-        .post_edit_.button
-          = link_to '編集', edit_post_path(post.id)
-        .post_delete_button
-          = link_to "削除", "posts/#{post.id}", data: { method: 'delete', confirm: '本当に削除してもよろしいですか？' }
-        .post_newimage_button
-          = link_to '画像投稿', edit_post_path(post.id)
-        - if account_signed_in?
-          -if current_account.has_liked?(post)
-            .post_like_heart
-              = link_to post_like_path(post), data: { method: 'delete' } do
-                =image_tag 'Vector.svg'
-          -else
-            .post_like_heart
-              = link_to post_like_path(post), data: { method: 'post' } do
-                = image_tag 'heart.svg'
-        .post_new_image_view
-          = image_tag(post.image) if post.image.attached?
+    = render 'commons/post', post: post

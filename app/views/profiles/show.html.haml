@@ -9,3 +9,5 @@
           = link_to 'Edit', edit_profile_path
       .profilePage_user_introduction
         初めまして！
+        - current_account.posts.each do |post|
+          = render 'commons/post', post: post
