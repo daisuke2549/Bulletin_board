@@ -6,7 +6,7 @@ class ProfilesController < ApplicationController
     end
 
     def edit
-        @profile = current_account.prepare_profile
+        @profile = current_account.build_profile
     end
 
     def update
