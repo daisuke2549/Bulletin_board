@@ -1,8 +1,15 @@
 .post_list
   .post_list_title 投稿詳細
   .post_list_card
-    .card_title
+  - if account_signed_in? && current_account.has_written?(@post)
+    .post_detail_actions
+      .dropdown1
+        = image_tag 'actions.svg', class: 'dropbtn'
+        .dropdown-content.mini
+          = link_to '編集する', edit_post_path(@post)
+          = link_to '削除する', post_path(@post), data: { method: 'delete', confirm: '本当に削除してもよろしいですか？' }
+    .card_title_post
       = @post.name
-    .card_title_info2
+    .card_title_info2_post
       = @post.content
    

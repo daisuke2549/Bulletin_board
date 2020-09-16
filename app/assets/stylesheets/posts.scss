@@ -66,3 +66,56 @@ a{
     background-color: blue;
     color:white;
 }
+
+.card_title_post{
+    position: absolute;
+    top:260px;
+    left:20px;
+}
+.card_title_info2_post{
+    position: absolute;
+    top:280px;
+    left:20px;
+}
+
+.dropdown1 img{
+    position: absolute;
+    top:260px;
+    left:410px;
+}
+.dropdown1-content {
+    font-weight: normal;
+    display: none;
+    right: 0;
+    position: absolute;
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+ 
+    &.mini{
+        min-width: 100px;
+        position: relative;
+    }
+  }
+ 
+  .dropdown1-content a {
+    padding: 8px 16px;
+    text-decoration: none;
+    display: block;
+  }
+ 
+  .dropdown1-content a:hover {
+    background-color: white;
+  }
+ 
+  .dropdown1:hover .dropdown-content {
+    display: block;
+  }
+
+  .dropdown-content.mini{
+      position:relative;
+      left:400px;
+      top:-110px;
+      width:50px;
+  }

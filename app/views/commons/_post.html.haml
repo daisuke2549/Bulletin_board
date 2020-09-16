@@ -14,7 +14,7 @@
         = link_to "削除", "posts/#{post.id}", data: { method: 'delete', confirm: '本当に削除してもよろしいですか？' }
       .post_newimage_button
         = link_to '画像投稿', edit_post_path(post.id)
-      - if account_signed_in?
+      - if account_signed_in? 
         -if current_account.has_liked?(post)
           .post_like_heart
             = link_to post_like_path(post), data: { method: 'delete' } do
