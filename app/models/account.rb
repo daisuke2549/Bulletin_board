@@ -6,6 +6,7 @@ class Account < ApplicationRecord
   has_many :posts, dependent: :destroy
   has_many :likes, dependent: :destroy
   has_one :profile, dependent: :destroy
+  delegate :birthday, :age, :gender, to: :profile, allow_nil: true
 
 
   def has_written?(post)
@@ -16,8 +17,20 @@ class Account < ApplicationRecord
     likes.exists?(post_id: post.id)
   end
 
+  def display_name
+    profile&.nickname || self.email.split('@').first
+  end
+
   def prepare_profile
     profile || build_profile
   end 
+  
+  def avatar_image
+    if profile&.avatar&.attached?
+      profile.avatar
+    else
+      'default-avatar.png'
+    end
+  end
 
 end
