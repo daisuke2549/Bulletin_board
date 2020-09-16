@@ -9,10 +9,8 @@
         .profilePage_user_actionButton
           = link_to 'Edit', edit_profile_path
       .profilePage_user_introduction
-<<<<<<< HEAD
         初めまして！
-=======
         = current_account.profile&.introduction
     - current_account.posts.each do |post|
       = render 'commons/post', post: post
->>>>>>> Profiles
+

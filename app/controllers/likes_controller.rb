@@ -11,7 +11,7 @@ class LikesController < ApplicationController
     post = Post.find(params[:post_id])
     like = post.likes.find_by!(account_id: current_account.id)
     like.destroy!
-    redirect_to posts_path(post)
+    redirect_to post_path(post)
   end
 
   private
