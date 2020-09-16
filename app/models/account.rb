@@ -7,6 +7,10 @@ class Account < ApplicationRecord
   has_many :likes, dependent: :destroy
   has_one :profile, dependent: :destroy
   delegate :birthday, :age, :gender, to: :profile, allow_nil: true
+<<<<<<< HEAD
+=======
+
+>>>>>>> Profiles
 
   def has_written?(post)
     posts.exists?(id: post.id)
