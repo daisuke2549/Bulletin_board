@@ -17,7 +17,7 @@ class Account < ApplicationRecord
   end
 
   def has_liked?(post)
-    likes.exists?(post_id: post.id)
+    likes.exists?(id: post.id)
   end
 
   def display_name
@@ -33,6 +33,15 @@ class Account < ApplicationRecord
       profile.avatar
     else
       'default-avatar.png'
+    end
+  end
+
+  private
+  def get_account_id(account)
+    if account.is_a?(Account)
+      account.id
+    else
+      account  
     end
   end
 

@@ -4,7 +4,7 @@ class CreatePosts < ActiveRecord::Migration[6.0]
       t.string :name
       t.string :title
       t.text :content
-
+      t.references :account, null: false
       t.timestamps
     end
   end
