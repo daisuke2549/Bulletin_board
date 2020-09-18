@@ -12,4 +12,9 @@
       = @post.name
     .card_title_info2_post
       = @post.content
-   
+    .post_list_top
+      コメント一覧
+      - @comments.each do |comment|
+        .post_comment
+          %p4= comment.content
+ 
