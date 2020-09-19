@@ -1,6 +1,11 @@
 <h2>Log in</h2>
 
+<<<<<<< HEAD
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+=======
+<%= form_for(resource, as: resource_name, url: account_session_path(resource_name)) do |f| %>
+
+>>>>>>> User_authentication
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>

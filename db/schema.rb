@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2020_09_19_002436) do
+=======
+ActiveRecord::Schema.define(version: 2020_09_19_024215) do
+>>>>>>> User_authentication
 
   create_table "accounts", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -20,6 +24,7 @@ ActiveRecord::Schema.define(version: 2020_09_19_002436) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "accountname"
     t.index ["email"], name: "index_accounts_on_email", unique: true
     t.index ["reset_password_token"], name: "index_accounts_on_reset_password_token", unique: true
   end
