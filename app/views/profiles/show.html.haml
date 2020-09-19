@@ -1,16 +1,2 @@
-.container.profilePage
-  .profilePage_user
-    .profilePage_user_image
-      = image_tag 'default-avatar.png'
-    .profilePage_user_basicInfo
-      .profilePage_user_name
-        .profilePage_user_displayName
-          #{current_account.display_name}（#{current_account.birthday}・#{current_account.gender}）
-        .profilePage_user_actionButton
-          = link_to 'Edit', edit_profile_path
-      .profilePage_user_introduction
-        初めまして！
-        = current_account.profile&.introduction
-    - current_account.posts.each do |post|
-      = render 'commons/post', post: post
+= render 'commons/profile', account: current_account
 

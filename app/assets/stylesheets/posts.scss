@@ -10,6 +10,7 @@
 
 .post_list_card{
     margin-top:60px;
+
 }
 
 .post_like_heart img{
@@ -122,9 +123,9 @@ a{
 
   .post_list_top {
 
-      position: relative;
-      left:150px;
-      top:40px;
+      position: absolute;
+      left:160px;
+      top:400px;
 
 }
 .post_comment{
@@ -132,11 +133,11 @@ a{
     border: 2px solid;
     height:140px;
     width:500px;
-    position: relative;
+    position: fixed;
     left:-150px;
     background-color: white;
     p4{
-        position: relative;
+        position: absolute;
         top:0px;
         left:0px;
         color: black;

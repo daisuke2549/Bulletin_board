@@ -2,9 +2,7 @@ class Profile < ApplicationRecord
     enum gender: { male: 0, female: 1, other: 2 }
     belongs_to :account
     has_one_attached :avatar
-<<<<<<< HEAD
 
-=======
     def age
         return '不明' unless birthday.present?
         years = Time.zone.now.year - birthday.year
@@ -16,5 +14,4 @@ class Profile < ApplicationRecord
         "#{years}歳"
     end
     end
->>>>>>> Profiles
 end
