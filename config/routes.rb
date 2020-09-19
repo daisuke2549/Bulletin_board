@@ -17,8 +17,5 @@ Rails.application.routes.draw do
   resource :profile, only: [:show, :edit, :update]
 
   root to: 'posts#index'
-<<<<<<< HEAD
 end
-=======
-end
->>>>>>> User_authentication
+
