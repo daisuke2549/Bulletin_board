@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_06_040226) do
+ActiveRecord::Schema.define(version: 2020_09_19_024215) do
 
   create_table "accounts", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2020_09_06_040226) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "accountname"
     t.index ["email"], name: "index_accounts_on_email", unique: true
     t.index ["reset_password_token"], name: "index_accounts_on_reset_password_token", unique: true
   end
@@ -45,6 +46,23 @@ ActiveRecord::Schema.define(version: 2020_09_06_040226) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
+  create_table "comments", force: :cascade do |t|
+    t.integer "post_id", null: false
+    t.text "content", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["post_id"], name: "index_comments_on_post_id"
+  end
+
+  create_table "likes", force: :cascade do |t|
+    t.integer "account_id", null: false
+    t.integer "post_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["account_id"], name: "index_likes_on_account_id"
+    t.index ["post_id"], name: "index_likes_on_post_id"
+  end
+
   create_table "posts", force: :cascade do |t|
     t.string "name"
     t.string "title"
@@ -52,6 +70,29 @@ ActiveRecord::Schema.define(version: 2020_09_06_040226) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "images"
+    t.integer "account_id"
+    t.index ["account_id"], name: "index_posts_on_account_id"
+  end
+
+  create_table "profiles", force: :cascade do |t|
+    t.integer "account_id", null: false
+    t.string "nickname"
+    t.text "introduction"
+    t.integer "gender"
+    t.date "birthday"
+    t.boolean "subscribed", default: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["account_id"], name: "index_profiles_on_account_id"
+  end
+
+  create_table "relationships", force: :cascade do |t|
+    t.integer "following_id", null: false
+    t.integer "follower_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["follower_id"], name: "index_relationships_on_follower_id"
+    t.index ["following_id"], name: "index_relationships_on_following_id"
   end
 
   create_table "users", force: :cascade do |t|
