@@ -34,6 +34,7 @@ gem 'pry-rails'
 gem 'jquery-rails'
 gem 'devise'
 gem 'jquery-ui-rails'
+gem 'rails-i18n' 
 
 
 group :development, :test do

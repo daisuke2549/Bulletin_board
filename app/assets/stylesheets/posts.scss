@@ -10,15 +10,21 @@
 
 .post_list_card{
     margin-top:60px;
-
+    
 }
 
 .post_like_heart img{
     position: relative;
-    top:-20px;
+    top:-30px;
     left:340px;
 }
 
+.card_title_detail_date {
+
+   position: relative;
+    top:60px;
+    left:100px;
+}
 
 .card_title p1{
     margin-left:0px;
@@ -35,11 +41,20 @@
 
 .card_title_info{
     margin-left:40px;
+    position: relative;
+    top:-50px;
 }
+.image_post_icon{
+    position: relative;
+    top:-40px;
+    left:10px
+}
+
 
 .post_list_card{
 border: 2px solid;
 height:140px;
+position: fixed;
 width:500px;
 a{
     text-decoration: none;
