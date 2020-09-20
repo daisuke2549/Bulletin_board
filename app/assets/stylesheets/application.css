@@ -15,7 +15,18 @@
  */
  @import 'profile';
 
+ $back-icon-size: 16px;
+
  .flash.time-limit p{
      position: relative;
      top:-100px;
  }
+ .header_logos img {
+        color:blue;
+        background-color: blue;
+        cursor: pointer;
+        width: 40px;
+        height:50px;
+  
+}
+

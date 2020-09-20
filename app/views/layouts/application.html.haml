@@ -8,6 +8,10 @@
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
   %body
+  .header_logos
+    - if !current_page?(root_path)
+      = link_to :back do
+        = image_tag 'back.jpg', class: 'header_back'
   .dropdown
   - if account_signed_in?
     .dropdown
